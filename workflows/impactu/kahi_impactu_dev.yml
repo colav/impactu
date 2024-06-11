@@ -53,12 +53,12 @@ workflow:
         collection_name: product_univalle
   openalex_sources:
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: sources
     num_jobs: 20
   openalex_subjects:
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: concepts
     num_jobs: 20
   ror_affiliations:
@@ -68,7 +68,7 @@ workflow:
     num_jobs: 20
   openalex_affiliations:
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: institutions
     num_jobs: 20
   staff_affiliations:
@@ -144,11 +144,20 @@ workflow:
     verbose: 5
   openalex_person:
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: authors
     collection_name_works: works # required for related works
     num_jobs: 20
     verbose: 5
+  authors_unicity:
+    collection_name: person
+    max_authors_threshold: 0
+    num_jobs: 1
+    verbose: 1
+    task:
+    - orcid
+    - doi
+
 ##############################
 # Clening es before indexing #
 ##############################
@@ -169,7 +178,7 @@ workflow:
     # es_user: elastic
     # es_password: colav  
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: works
     num_jobs: 20
     verbose: 5
@@ -222,7 +231,7 @@ workflow:
 ################
   openalex_works:
     database_url: localhost:27017
-    database_name: openalexco
+    database_name: openalexco_new
     collection_name: works
     num_jobs: 20
     es_index: kahi_es
@@ -286,3 +295,7 @@ workflow:
     n_jobs: 20
     verbose: 5
     author_count: 6 #use this with warning, maybe the network is too big and it can not be saved in MongoDB
+  impactu_post_cites_count:
+    database_url: localhost:27017
+    database_name: kahi_calculations_dev
+    verbose: 5
