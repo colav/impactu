@@ -3,6 +3,7 @@ config:
   database_name: kahi_dev
   log_database: kahi_dev
   log_collection: log
+  profile: False
 workflow:
   doaj_sources:
     database_url: localhost:27017
@@ -53,12 +54,12 @@ workflow:
         collection_name: product_univalle
   openalex_sources:
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: sources
     num_jobs: 20
   openalex_subjects:
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: concepts
     num_jobs: 20
   ror_affiliations:
@@ -68,7 +69,7 @@ workflow:
     num_jobs: 20
   openalex_affiliations:
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: institutions
     num_jobs: 20
   staff_affiliations:
@@ -144,19 +145,28 @@ workflow:
     verbose: 5
   openalex_person:
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: authors
     collection_name_works: works # required for related works
     num_jobs: 20
     verbose: 5
-  authors_unicity:
+  scholar_person:
+    num_jobs: 20
+    verbose: 5
+    database_url: localhost:27017
+    database_name: scholar_colombia_2024
+    collection_name: stage
+  unicity_person:
     collection_name: person
-    max_authors_threshold: 0
+    max_authors_threshold: 20
     num_jobs: 1
-    verbose: 1
+    verbose: 5
     task:
-    - orcid
-    - doi
+      - scholar
+      - scopus
+      - researchgate
+      - orcid
+      - doi
 
 ##############################
 # Clening es before indexing #
@@ -168,25 +178,19 @@ workflow:
     es_password: colav
     task: delete
     bulk_size: 100
+    debug: true
     verbose: 5  
-#########
-# works #
-#########
+  # #######
+  # works #
+  # #######
   openalex_works/doi:
-    # es_index: kahi_es
-    # es_url: http://localhost:9200
-    # es_user: elastic
-    # es_password: colav  
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: works
     num_jobs: 20
     verbose: 5
+    backend: "multiprocessing"
   scienti_works/doi:
-    # es_index: kahi_es
-    # es_url: http://localhost:9200
-    # es_user: elastic
-    # es_password: colav  
     databases:
       - database_url: localhost:27017
         database_name: scienti_111
@@ -203,16 +207,8 @@ workflow:
     num_jobs: 20
     verbose: 5
   ranking_udea_works/doi:
-    # es_index: kahi_es
-    # es_url: http://localhost:9200
-    # es_user: elastic
-    # es_password: colav  
     file_path: staff/produccion 2018-2023.xlsx
   scholar_works/doi:
-    # es_index: kahi_es
-    # es_url: http://localhost:9200
-    # es_user: elastic
-    # es_password: colav  
     database_url: localhost:27017
     database_name: scholar_colombia_2024
     collection_name: stage
@@ -225,19 +221,22 @@ workflow:
     es_password: colav
     task: bulk_insert
     bulk_size: 1000
+    debug: false
     verbose: 5      
 ################
 # works no doi #
 ################
   openalex_works:
     database_url: localhost:27017
-    database_name: openalexco_new
+    database_name: openalexco
     collection_name: works
     num_jobs: 20
     es_index: kahi_es
     es_url: http://localhost:9200
     es_user: elastic
     es_password: colav
+    backend: "multiprocessing" # options are joblib options
+#    backend: "threading" # options are joblib options
     verbose: 3
   scienti_works:
     es_index: kahi_es
@@ -286,15 +285,18 @@ workflow:
     insert_all: True
     num_jobs: 20
     verbose: 1
+  post_person_work_cleaning:
+    verbose: 4
   post_cleanup_entities: # run this after all works plugins are done
     num_jobs: 20
     verbose: 4
   impactu_postcalculations:
     database_url: localhost:27017
     database_name: kahi_calculations_dev
+    backend: "multiprocessing"
     n_jobs: 20
     verbose: 5
-    author_count: 6 #use this with warning, maybe the network is too big and it can not be saved in MongoDB
+    author_count: 10 #use this with warning, maybe the network is too big and it can not be saved in MongoDB
   impactu_post_cites_count:
     database_url: localhost:27017
     database_name: kahi_calculations_dev
