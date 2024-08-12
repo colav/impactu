@@ -1,0 +1,303 @@
+config:
+  database_url: localhost
+  database_name: kahi_dev
+  log_database: kahi_dev
+  log_collection: log
+  profile: False
+workflow:
+  doaj_sources:
+    database_url: localhost:27017
+    database_name: doaj_2024
+    collection_name: stage
+    verbose: 5
+  scimago_sources:
+    file_path: 
+      - scimago/scimagojr 1999.csv
+      - scimago/scimagojr 2000.csv
+      - scimago/scimagojr 2001.csv
+      - scimago/scimagojr 2002.csv
+      - scimago/scimagojr 2003.csv
+      - scimago/scimagojr 2004.csv
+      - scimago/scimagojr 2005.csv
+      - scimago/scimagojr 2006.csv
+      - scimago/scimagojr 2007.csv
+      - scimago/scimagojr 2008.csv
+      - scimago/scimagojr 2009.csv
+      - scimago/scimagojr 2010.csv
+      - scimago/scimagojr 2011.csv
+      - scimago/scimagojr 2012.csv
+      - scimago/scimagojr 2013.csv
+      - scimago/scimagojr 2014.csv
+      - scimago/scimagojr 2015.csv
+      - scimago/scimagojr 2016.csv
+      - scimago/scimagojr 2017.csv
+      - scimago/scimagojr 2018.csv
+      - scimago/scimagojr 2019.csv
+      - scimago/scimagojr 2020.csv
+      - scimago/scimagojr 2021.csv
+      - scimago/scimagojr 2022.csv
+      - scimago/scimagojr 2023.csv
+      - scimago/scimagojr 2024.csv
+  scienti_sources:
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_udea
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_uec
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_unaula
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_univalle
+  openalex_sources:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: sources
+    num_jobs: 20
+  openalex_subjects:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: concepts
+    num_jobs: 20
+  ror_affiliations:
+    database_url: localhost:27017
+    database_name: ror_2024
+    collection_name: stage
+    num_jobs: 20
+  openalex_affiliations:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: institutions
+    num_jobs: 20
+  staff_affiliations:
+    databases:
+      - institution_id: https://ror.org/03bp5hc83 #Universidad de Antioquia (could be any external id ex: ROR_ID, GRID_ID, etc)
+        file_path: staff/Base de Datos profesores 2024_con_clasificación de Colciencias.xlsx
+      - institution_id: https://ror.org/00jb9vg53 #Universidad del Valle
+        file_path: staff/Maestro_empleado DOCENTES SEP 26_NORMALIZADO_univalle_2023.xlsx
+      - institution_id: https://ror.org/05tkb8v92 #Universidad Autónoma Latinoamericana
+        file_path: staff/UNAULA_Profesores regulares y ocasionales vige_NORMALIZADO.xlsx
+      - institution_id: https://ror.org/02xtwpk10 # Universidad Externado de Colombia
+        file_path: staff/Formato reporte de información docentes_2023_NORMALIZADO_uec.xlsx
+    verbose: 5
+  wikidata_affiliations:
+    database_name: wikidata #i did the run over the full wikidata
+    collection_name: data
+    num_jobs: 20
+    verbose: 5    
+  scienti_affiliations:
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_udea
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_uec
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_unaula
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_univalle
+    verbose: 5
+  minciencias_opendata_affiliations:
+      database_url: localhost:27017
+      database_name: yuku
+      collection_name: gruplac_groups_data
+      num_jobs: 20
+      verbose: 4
+  staff_person:
+    databases:
+      - institution_id: https://ror.org/03bp5hc83 # Universidad de Antioquia
+        file_path: staff/Base de Datos profesores 2024_con_clasificación de Colciencias.xlsx
+      - institution_id: https://ror.org/00jb9vg53 # Universidad del Valle
+        file_path: staff/Maestro_empleado DOCENTES SEP 26_NORMALIZADO_univalle_2023.xlsx
+      - institution_id: https://ror.org/05tkb8v92 #Universidad Autónoma Latinoamericana
+        file_path: staff/UNAULA_Profesores regulares y ocasionales vige_NORMALIZADO.xlsx
+      - institution_id: https://ror.org/02xtwpk10 # Universidad Externado de Colombia
+        file_path: staff/Formato reporte de información docentes_2023_NORMALIZADO_uec.xlsx
+    verbose: 5
+  scienti_person:
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_udea
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_uec
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_unaula
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_univalle
+    verbose: 2
+  minciencias_opendata_person:
+    database_url: localhost:27017
+    database_name: yuku
+    researchers: cvlac_data
+    cvlac: cvlac_stage
+    groups_production: gruplac_production_data
+    num_jobs: 20
+    verbose: 5
+  openalex_person:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: authors
+    collection_name_works: works # required for related works
+    num_jobs: 20
+    verbose: 5
+  scholar_person:
+    num_jobs: 20
+    verbose: 5
+    database_url: localhost:27017
+    database_name: scholar_colombia_2024
+    collection_name: stage
+  unicity_person:
+    collection_name: person
+    max_authors_threshold: 20
+    num_jobs: 1
+    verbose: 5
+    task:
+      - scholar
+      - scopus
+      - researchgate
+      - orcid
+      - doi
+
+##############################
+# Clening es before indexing #
+##############################
+  elasticsearch_works/delete:
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    task: delete
+    bulk_size: 100
+    debug: true
+    verbose: 5  
+  # #######
+  # works #
+  # #######
+  openalex_works/doi:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: works
+    num_jobs: 20
+    verbose: 5
+    backend: "multiprocessing"
+  scienti_works/doi:
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_udea
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_uec
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_unaula
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_univalle
+    num_jobs: 20
+    verbose: 5
+  ranking_udea_works/doi:
+    file_path: staff/produccion 2018-2023.xlsx
+  scholar_works/doi:
+    database_url: localhost:27017
+    database_name: scholar_colombia_2024
+    collection_name: stage
+    num_jobs: 20
+    verbose: 5
+  elasticsearch_works/bulk_insert:
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    task: bulk_insert
+    bulk_size: 1000
+    debug: false
+    verbose: 5      
+################
+# works no doi #
+################
+  openalex_works:
+    database_url: localhost:27017
+    database_name: openalexco
+    collection_name: works
+    num_jobs: 20
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    backend: "multiprocessing" # options are joblib options
+#    backend: "threading" # options are joblib options
+    verbose: 3
+  scienti_works:
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_udea
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_uec
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_unaula
+      - database_url: localhost:27017
+        database_name: scienti_111
+        collection_name: product_univalle
+    num_jobs: 20
+    verbose: 5
+  ranking_udea_works:
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    file_path: staff/produccion 2018-2022 al 27 oct 2022.xlsx
+  scholar_works:
+    database_url: localhost:27017
+    database_name: scholar_colombia_2024
+    collection_name: stage
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    num_jobs: 20
+    verbose: 2
+  minciencias_opendata_works:
+    es_index: kahi_es
+    es_url: http://localhost:9200
+    es_user: elastic
+    es_password: colav
+    database_url: localhost:27017
+    database_name: yuku
+    collection_name: gruplac_production_data
+    insert_all: True
+    num_jobs: 20
+    verbose: 1
+  post_person_work_cleaning:
+    verbose: 4
+  post_cleanup_entities: # run this after all works plugins are done
+    num_jobs: 20
+    verbose: 4
+  impactu_postcalculations:
+    database_url: localhost:27017
+    database_name: kahi_calculations_dev
+    backend: "multiprocessing"
+    n_jobs: 20
+    verbose: 5
+    author_count: 10 #use this with warning, maybe the network is too big and it can not be saved in MongoDB
+  impactu_post_cites_count:
+    database_url: localhost:27017
+    database_name: kahi_calculations_dev
+    verbose: 5
