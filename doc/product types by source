@@ -1,0 +1,12 @@
+openalexco> db.works.distinct("type")
+[
+  'article',      'book',
+  'book-chapter', 'dataset',
+  'dissertation', 'editorial',
+  'erratum',      'letter',
+  'libguides',    'other',
+  'paratext',     'peer-review',
+  'preprint',     'reference-entry',
+  'report',       'review',
+  'standard'
+]
