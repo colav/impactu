@@ -154,3 +154,16 @@ Nuevo conocimiento
 *  Variedad animal
 *  Variedad vegetal
 ```
+
+# Google Scholar
+
+```
+{'@article',
+ '@book',
+ '@incollection',
+ '@inproceedings',
+ '@mastersthesis',
+ '@misc',
+ '@phdthesis',
+ '@techreport'}
+```
