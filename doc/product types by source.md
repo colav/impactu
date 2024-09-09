@@ -13,6 +13,20 @@ openalexco> db.works.distinct("type")
   'standard'
 ]
 ```
+
+# Google Scholar
+
+```
+{'@article',
+ '@book',
+ '@incollection',
+ '@inproceedings',
+ '@mastersthesis',
+ '@misc',
+ '@phdthesis',
+ '@techreport'}
+```
+
 # Datos Abierto de Minciencias DAM
 Global Types
 ```
@@ -155,15 +169,4 @@ Nuevo conocimiento
 *  Variedad vegetal
 ```
 
-# Google Scholar
 
-```
-{'@article',
- '@book',
- '@incollection',
- '@inproceedings',
- '@mastersthesis',
- '@misc',
- '@phdthesis',
- '@techreport'}
-```
