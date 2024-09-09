@@ -1,44 +1,6 @@
 {
-article: [ 'Articulo en revista Tipo A2', 'Articulo en revista Tipo B', 'Articulo en revista Tipo A1', 'Articulo en revista nacional de difusion local', 'Articulo en revista de difusion internacional. Categoria A', 'Articulo corto publicado en libro resultado de investigacion', 'Articulo en revista nacional de difusion nacional', 'Articulo en revista Tipo B2',
-, 'Articulo en revista Tipo C', 'Reporte de caso en revista Tipo A2', 'Reporte de caso en revista Tipo A1', 'Reporte de caso en revista Tipo B', 'Articulos nacionales publicados ante del 28/03/2003', 'Revision de tema en revista Tipo A2', 'Traduccion Articulo de revista o libro de difusion nal o reg', 'Traduccion Articulo', 'Traduccion de articulo o capitulo de libro', 'Resena critica',
-], 
-review: ['Revision de tema en revista Tipo A1', 'Revision de tema en revista Tipo B','Revision de tema en revista Tipo C',
-], 
-letter: ['Articulo corto publicado en revista Tipo A2', 'Comunicacion corta en revista Tipo A1', 'Comunicacion corta en revista Tipo A2', 'Comunicacion corta en revista Tipo B', 'Comunicacion corta en revista Tipo C', 'Articulo corto publicado en revista Tipo A1', 'Articulo corto publicado en revista Tipo B1', 'Articulo corto publicado en revista Tipo C1', 'Reporte de caso en revista Tipo C',
-] 
-editorial: ['Editorial en revista tipo B', 'Carta al editor en revista tipo A2', 'Editorial en revista tipo C', 'Carta al editor en revista tipo A1', 'Carta al editor en revista tipo B', 'Carta al editor en revista tipo C', 'Editorial en revista tipo A1', 'Editorial en revista tipo A2',
-],
-book: ['Libro resultado de investigacion', 'Libro de texto', 'Libro resultado de tesis doctoral categoria A', 'Libro resultado de tesis doctoral categoria B', 'Libro de ensayo', 'Reporte de caso en libro de texto', 'Revision de tema en libro de difusion nacional-intenacional', 'Reporte de caso en libro resultado de investigacion', 'Libro de investigacion por capitulos resolucion 01 14/03/2018', 'Revision de tema en libro resultado de investigacion', 'Traduccion de Libro', 'Impreso universitario', 'Libro de literatura categoria A', 'Cuento o relato de difusion nacional', 'Capitulo de obra artistica'
-], 
-book-chapter:['Reporte de caso en libro', 'Libro de texto por capitulos', 'Libro resultado de investigacion por capitulos', 'Revision de tema en libro de texto', 'Articulo corto publicado en libro de texto', 'Capitulo de libro resultado de investigacion', 'Capitulo de libro Tipo B', 'Libro de ensayo por capitulos', 'Capitulo de libro de ensayo', 'Capitulo de libro de texto'
-],
-dissertation: ['Direccion de trabajo de grado de maestria', 'Direccion de trabajo de grado de doctorado', 'Direccion de trabajo de grado de especializacion medica()', 'Capitulo de obra artistica nacional'
-],
-prize: ['Premio internacional', 'Premio internacional B', 'Premio Internacional C', 'Premio internacional D', 'Premio nacional', 'Premio nacional B', 'Premio nacional C', 'Premio nacional D'
-],
-video-recording: [ 'Video Documental Nacional', 'Video Documental Local'
-],
-patent: ['Patente. Categoria A', 'PATENTE A4 VIA TRADICIONAL SIN PRODUCTO Y SIN CONTRATO', 'PATENTE DE INVENCION',
-],
-musical-composition: ['Composicion musical musica de camara', 'Composicion musica de camara nacional'
-],
-software: ['Software de produccion cientifica', 'Software de produccion tecnologica'
-];
-digital-media: [ 'Produccion fonografica documental local', 'Produccion fonografica didiactica local'
-],
-video-recording: ['Video didactico de difusion local', 'Video didactico internacional'
-],
-artistic-work: ['Obra de creacion original artistica local', 'Obra de creacion complementaria o de apoyo Nacional', 'Obra de creacion complementaria internacional.', 'Obra de creacion original artistica internacional'
-],
-published-scientific-conference-contribution:
-['Resumen de ponencia en evento iberoamericano o de 2 continet', 'Ponencia en extenso en evento latinoamericano ()', 'Resumen de ponencia en evento nacional ()', 'Ponencia de extension intermedia latinoameric o de 1 cont ()', 'Ponencia de extension intermedia en evento nacional ()', 'Ponencia en extenso en evento local', 'Ponencia en extenso en evento nacional', 'Resumen de ponencia en evento internacional ()', 'Ponencia de extension intermedia en evento internacional ()', 'Ponencia en extenso en evento iberoamericano ()', 'Ponencia en extenso en evento internacional', 'Obra de creacion original artistica nacional','Obra de creacion complementaria o de apoyo local'
-],
-theatric: [ 'Director de actores en obra de teatro', 'Interpretacion de impacto nacional', 'Producto tecnologico de innovacion', 'Interpretacion de impacto internacional', 'Interpretacion de impacto local',
-],
-radio_TV-Program: [ 'Produccionradiografica de difusion local'
-],
-professional-film_videorecordings_sound-recordings: [ 'Produccion fonografica nacional','Video Documental Internacional', 'Video didactico nacional'
-],
-other: [ 'Puntaje Asignado a Profesor Visitante', 'Producto tecnologico de adaptacion', 'Produccion especial para bonificacion', 'Produccion Academica Especial', 'Resumen de ponencia en evento latinoamerican o de 1 continet', 'Estidio posdoctoral'
-],
-}
+article: [ 'Articulo en revista Tipo A2', 'Articulo en revista Tipo B', 'Articulo en revista Tipo A1', 'Articulo en revista nacional de difusion local', 'Articulo en revista de difusion internacional. Categoria A', 
+   'Articulo corto publicado en libro resultado de investigacion', 'Articulo en revista nacional de difusion nacional', 'Articulo en revista Tipo B2', 'Articulo en revista Tipo C', 'Reporte de caso en revista Tipo A2', 
+  'Reporte de caso en revista Tipo A1', 'Reporte de caso en revista Tipo B', 'Articulos nacionales publicados ante del 28/03/2003', 'Revision de tema en revista Tipo A2', 
+  'Traduccion Articulo de revista o libro de difusion nal o reg', 'Traduccion Articulo', 'Traduccion de articulo o capitulo de libro', 'Resena critica',
+]}
