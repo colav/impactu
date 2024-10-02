@@ -1,17 +1,29 @@
 # openalex
 ```
-openalexco> db.works.distinct("type")
+openalex> db.works.distinct("type")
 [
-  'article',      'book',
-  'book-chapter', 'dataset',
-  'dissertation', 'editorial',
-  'erratum',      'letter',
-  'libguides',    'other',
-  'paratext',     'peer-review',
-  'preprint',     'reference-entry',
-  'report',       'review',
-  'standard'
+  'article',
+  'book',
+  'book-chapter',
+  'dataset',
+  'dissertation',
+  'editorial',
+  'erratum',
+  'grant',
+  'letter',
+  'libguides',
+  'other',
+  'paratext',
+  'peer-review',
+  'preprint',
+  'reference-entry',
+  'report',
+  'retraction',
+  'review',
+  'standard',
+  'supplementary-materials'
 ]
+
 ```
 
 # Google Scholar
