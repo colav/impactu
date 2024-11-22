@@ -4,7 +4,7 @@
 The first thing is to install https://github.com/colav/Kahi_sample  and https://github.com/colav/Kahi
 
 The samples are:
-* `kahi_sample_vip.yml` is the workflow to generate samples for authors
+* `kahi_sample_vip.yml` is the workflow to generate samples for authors (meaning works for those authors and required other information to run kahi ETL)
 
 Please run the workflow with 
 `kahi_run --workflow kahi_sample_vip.yml`
