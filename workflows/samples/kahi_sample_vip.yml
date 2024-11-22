@@ -1,0 +1,108 @@
+config:
+  database_url: localhost
+  log_database: kahi_saples_log
+  log_collection: log
+  profile: False
+workflow:
+  scienti_sample:
+    verbose: 1
+    num_jobs: 20 
+    database_out:
+      drop_database: True
+      database_url: localhost
+      database_name: scienti_sample
+      collection_name: product
+    databases:
+      - database_url: localhost:27017
+        database_name: scienti_udea_2024
+        collection_name: product
+      - database_url: localhost:27017
+        database_name: scienti_uec_2023
+        collection_name: product_uec_2023
+      - database_url: localhost:27017
+        database_name: scienti_unaula_2023
+        collection_name: product
+      - database_url: localhost:27017
+        database_name: scienti_univalle_2023
+        collection_name: product
+    authors: 
+      - "0000177733" # Diego Restrepo
+      - "0001385569" # Claudia Marcela Velez
+      - "0000536237" # Gabriel Jaime Velez Cuartas
+      - "0001449597" # Carlos E Yaguna
+      - "0000389307" # Alejandro Uribe
+      - "0000707619" # Oscar Zapata
+  
+  minciencias_sample:
+    verbose: 1
+    num_jobs: 20
+    database_out:
+      drop_database: True
+      database_url: localhost
+      database_name: minciencias_sample
+      collection_names:
+      - gruplac_production: gruplac_production_data
+      - gruplac_groups: gruplac_groups_data
+      - cvlac_stage: cvlac_stage
+      - cvlac_stage_private: cvlac_stage_private
+      - cvlac_data: cvlac_data
+    database_in:
+      database_url: localhost:27017
+      database_name: yuku
+      collection_names:
+      - gruplac_production: gruplac_production_data
+      - gruplac_groups: gruplac_groups_data
+      - cvlac_stage: cvlac_stage
+      - cvlac_stage_private: cvlac_stage_private
+      - cvlac_data: cvlac_data
+    authors: 
+      - "0000177733" # Diego Restrepo
+      - "0001385569" # Claudia Marcela Velez
+      - "0000536237" # Gabriel Jaime Velez Cuartas
+      - "0001449597" # Carlos E Yaguna
+      - "0000389307" # Alejandro Uribe
+      - "0000707619" # Oscar Zapata
+
+  openalex_sample:
+    verbose: 1
+    num_jobs: 20 
+    database_out:
+      drop_database: True
+      database_url: localhost
+      database_name: openalex_sample
+      indeces: []
+    database_in:
+      database_url: localhost:27017
+      database_name: openalexco
+      indeces: ["id","authorships.author.id"]
+    authors: 
+      - "https://openalex.org/A5049648126" # Diego Restrepo perfil 1
+      - "https://openalex.org/A5005743365" # Diego Restrepo perfil 2
+      - "https://openalex.org/A5080491905" # Oscar Zapata
+      - "https://openalex.org/A5056692124" # Carlos Yaguna
+      - "https://openalex.org/A5016617621" # Gabriel Jaime Velez
+      - "https://openalex.org/A5070173312" # Claudia Marcela velez 1
+      - "https://openalex.org/A5041330466" # Claudia Marcela velez 2
+      - "https://openalex.org/A5018681070" # Claudia Marcela velez 3
+      - "https://openalex.org/A5031857847" # Claudia Marcela velez 4 (nombre malo pero artículos de ella)
+      - "https://openalex.org/A5059964208" # Alejandro Uribe
+
+  scholar_sample:
+    verbose: 1
+    num_jobs: 20
+    database_out:
+      drop_database: True
+      database_url: localhost
+      database_name: scholar_sample
+      collection_name: stage
+    database_in:
+      database_url: localhost:27017
+      database_name: scholar_colombia_2024
+      collection_name: stage
+    authors:
+      - "1sKULCoAAAAJ" # Diego Restrepo
+      - "RuclEJkAAAAJ" # Claudia Marcela Velez
+      - "HcAnZ0MAAAAJ" # Gabriel Jaime Velez Cuartas
+      - "AGPrsKwAAAAJ" # Carlos Yaguna
+      - "0SEOpKoAAAAJ" # Oscar Zapata
+      - "-2lv5cwAAAAJ" # Alejandro Uribe 
