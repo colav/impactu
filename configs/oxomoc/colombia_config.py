@@ -1,7 +1,11 @@
+# Configuration for Colombian institution DSpace endpoints
+# Note: Institution names should use consistent Title Case format with proper Spanish accents
+# to ensure consistent display in coauthorship graphs and other visualizations (Issue #45)
+
 endpoints = {}
 endpoints['dspace_ccb'] = {}
 endpoints['dspace_ccb']['enabled'] = True
-endpoints['dspace_ccb']['name'] = 'FUNDACION UNIVERSITARIA EMPRESARIAL DE LA CAMARA DE COMERCIO DE BOGOTA- UNIEMPRESARIAL'
+endpoints['dspace_ccb']['name'] = 'Fundación Universitaria Empresarial de la Cámara de Comercio DE BOGOTA- UNIEMPRESARIAL'
 endpoints['dspace_ccb']['ror'] = 'https://ror.org/02yr3f298'
 endpoints['dspace_ccb']['url'] = 'https://bibliotecadigital.ccb.org.co/server/oai/request'
 endpoints['dspace_ccb']['metadataPrefix'] = 'dim'
