@@ -31,11 +31,15 @@ The fix needs to be applied in the **colav/Kahi_plugins** repository, specifical
 
 ### Issue Analysis
 
+In the file `Kahi_scienti_person/kahi_scienti_person/Kahi_scienti_person.py` (colav/Kahi_plugins repository):
+
 The code already applies `.strip()` in some locations (lines 97, 102, 108) but is **missing `.strip()`** in other critical sections where `TXT_PRIM_APELL` and `TXT_SEG_APELL` are used directly with `title_case()`.
 
 ### Required Changes
 
-#### Location 1: Lines 356-362
+Note: Line numbers are approximate and based on analysis of the main branch as of December 2024. Please verify exact line numbers when applying the fix.
+
+#### Location 1: Around lines 356-362
 **Current code:**
 ```python
 if "TXT_PRIM_APELL" in author.keys():
@@ -58,7 +62,7 @@ if "TXT_SEG_APELL" in author.keys():
             title_case(author["TXT_SEG_APELL"].strip()))
 ```
 
-#### Location 2: Lines 736-742
+#### Location 2: Around lines 736-742
 **Current code:**
 ```python
 if "TXT_PRIM_APELL" in author.keys():
