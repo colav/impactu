@@ -16,6 +16,8 @@ According to the requirement: "si la afiliación no tiene id no se le puede asig
 1. **utils.py**: Modified `process_affiliation()` to return `None` when the affiliation is not found in the database, instead of crashing.
 2. **Kahi_dspace_works.py**: Added a check in the `run()` method to skip processing repositories when the affiliation is not found, logging a warning message.
 
+**Note**: The fix maintains consistency with the existing codebase style (uses `print()` for logging as the rest of the codebase does). The existing typo `dsapce_db` in the original code is preserved to keep changes minimal.
+
 ### How to Apply
 ```bash
 cd /path/to/kahi_plugins
